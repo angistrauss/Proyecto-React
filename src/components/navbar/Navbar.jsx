@@ -11,9 +11,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import CartWidget from '../cartwidget/CartWidget';
+import CartWidget from '../cartwidget/cartWidget';
+import { Link, NavLink } from "react-router-dom";
 
-const pages = ['Servicios', 'Precio', 'Blog'];
+const pages = ['COMPUTACIÓN', 'ACCESORIOS'];
 const settings = ['Perfil', 'Cuenta', 'Carrito', 'Cerrar sesión'];
 
 function Navbar() {
@@ -37,13 +38,23 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: '#d8d8d8', boxShadow: 'none', width: '100%', top: 0, zIndex: 1100 }}>
-      <Container maxWidth="xl" sx={{ width: '100%', padding: 0 }}>
-        <Toolbar disableGutters>
+    <AppBar position="sticky" 
+      sx={{ 
+        backgroundColor: '#e8e8e8', 
+        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', 
+        width: '100%', 
+        top: 0, 
+        zIndex: 1100,
+        padding: '10px 20px' 
+      }}
+    >
+      <Container maxWidth="xl">
+        <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
+              aria-label="menu"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
@@ -74,27 +85,36 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
+          <Link to="/">
           <img 
-            src="/src/assets/logo-angi.svg" 
-            alt="Mi Logo" 
-            style={{ height: '30px', marginRight: '30px' }} 
+            src="/src/assets/logo.svg" 
+            alt="Logo compuclik" 
+            style={{ height: '60px', marginRight: '40px' }} 
           />
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          </Link>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, gap: '30px' }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block' }}
-              >
-                {page}
-              </Button>
+              <NavLink
+              key={page}
+              to={`/category/${page.toLowerCase()}`} 
+              style={({ isActive }) => ({
+                textDecoration: "none",
+                color: isActive ? "#6C1B9E" : "black",
+                fontSize: "1.1rem",
+                fontWeight: isActive ? "bold" : "600", 
+                padding: "10px 15px"
+              })}
+              onClick={handleCloseNavMenu}
+            >
+              {page}
+            </NavLink>
             ))}
           </Box>
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center', gap: 3 }}>
             <CartWidget />
-            <Tooltip title="Open settings">
+            <Tooltip title="Ver perfil">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Avatar" src="/src/assets/avatar.svg" />
+                <Avatar alt="Avatar" src="/src/assets/avatar.svg" sx={{ width: 50, height: 50 }} /> 
               </IconButton>
             </Tooltip>
             <Menu

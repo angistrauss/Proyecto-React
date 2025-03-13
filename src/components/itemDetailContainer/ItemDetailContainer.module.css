@@ -1,0 +1,118 @@
+.detailContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.cardDetail {
+    display: flex; /* Activa flexbox */
+    flex-direction: row; /* Asegura distribución horizontal */
+    align-items: center; /* Alinea verticalmente */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    width: 100%;
+    gap: 30px; /* Espacio entre imagen y texto */
+}
+
+.cardImage img {
+    width: auto;
+    max-height: 400px; /* Controla la altura */
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.cardContent {
+    flex: 1;
+}
+
+/* Título */
+.cardContent h2 {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Descripción */
+.card-content p.product-price {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* Precio */
+.productPrice {
+    font-size: 1.4rem; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Negrita */
+    color: #6C1B9E; /* Color destacado (morado) */
+    margin-top: 10px;
+}
+
+/* Contador */
+.counterContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.counterBtn {
+    background-color: #ccc;
+    border: none;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.counterBtn:hover {
+    background-color: #bbb;
+}
+
+.counterInput {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+/* Botón Agregar al carrito */
+.addToCart {
+    background: #6C1B9E;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.addToCart:hover {
+    background: #14006e;
+}
+
+/* Stock */
+.stockInfo {
+    background: #f1f1f1;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
