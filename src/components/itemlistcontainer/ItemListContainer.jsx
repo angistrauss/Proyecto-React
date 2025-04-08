@@ -1,37 +1,47 @@
 import React, { useState, useEffect } from "react";
-import ItemCard from "./ItemCard2.jsx";
+import ItemList from "../itemList/ItemList";
 import styles from "./ItemListContainer.module.css";
-
+import { useParams } from "react-router-dom";
+import { getDocs, collection, query } from "firebase/firestore";
+import { db } from "../../firebase/client";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
+  const { categoryId } = useParams();
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        const filteredProducts = data.filter((product) => 
-          product.category.toLowerCase().includes("electronics")
-        );
-
-        const productsWithStock = filteredProducts.map((product) => ({
-          ...product,
-          stock: Math.floor(Math.random() * 46) + 5, 
+    const getProducts = async () => {
+      try {
+        const q = query(collection(db, "products"));
+        const querySnapshot = await getDocs(q);
+        const dataFiltrada = querySnapshot.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
         }));
 
-        setProducts(productsWithStock);
-      })
-      .catch((error) => console.error("Error al cargar productos:", error));
-  }, []);
+        const finalData = categoryId
+          ? dataFiltrada.filter(
+              (prod) =>
+                prod.category &&
+                prod.category.toLowerCase() === categoryId.toLowerCase()
+            )
+          : dataFiltrada;
+
+        setProducts(finalData);
+      } catch (error) {
+        console.error("Error obteniendo productos:", error);
+      }
+    };
+
+    getProducts();
+  }, [categoryId]);
 
   return (
     <div className={styles.productGallery}>
       {products.length > 0 ? (
-        products.map((product) => (
-          <ItemCard key={product.id} product={product} />
-        ))
+        <ItemList productos={products} />
       ) : (
-        <p>Cargando...</p>
+        <p className={styles.loading}>Cargando...</p>
       )}
     </div>
   );

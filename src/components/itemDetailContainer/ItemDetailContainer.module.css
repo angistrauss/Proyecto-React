@@ -9,21 +9,21 @@
 }
 
 .cardDetail {
-    display: flex; /* Activa flexbox */
-    flex-direction: row; /* Asegura distribución horizontal */
-    align-items: center; /* Alinea verticalmente */
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
     background: white;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: left;
     width: 100%;
-    gap: 30px; /* Espacio entre imagen y texto */
+    gap: 30px; 
 }
 
 .cardImage img {
     width: auto;
-    max-height: 400px; /* Controla la altura */
+    max-height: 400px;
     object-fit: contain;
     border-radius: 10px;
 }
@@ -32,7 +32,6 @@
     flex: 1;
 }
 
-/* Título */
 .cardContent h2 {
     font-size: 1.5rem;
     color: #333;
@@ -40,22 +39,19 @@
     margin-bottom: 10px;
 }
 
-/* Descripción */
 .card-content p.product-price {
     font-size: 1rem;
     color: #444;
     margin-bottom: 10px;
 }
 
-/* Precio */
 .productPrice {
-    font-size: 1.4rem; /* Tamaño de fuente más grande */
-    font-weight: bold; /* Negrita */
-    color: #6C1B9E; /* Color destacado (morado) */
+    font-size: 1.4rem; 
+    font-weight: bold; 
+    color: #6C1B9E; 
     margin-top: 10px;
 }
 
-/* Contador */
 .counterContainer {
     display: flex;
     align-items: center;
@@ -87,7 +83,6 @@
     font-size: 1.2rem;
 }
 
-/* Botón Agregar al carrito */
 .addToCart {
     background: #6C1B9E;
     color: white;
@@ -105,7 +100,6 @@
     background: #14006e;
 }
 
-/* Stock */
 .stockInfo {
     background: #f1f1f1;
     padding: 5px;

@@ -1,0 +1,116 @@
+.cartView {
+    padding: 2rem;
+    max-width: 800px;         
+    margin: 2rem auto;       
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .cartItems {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .cartItem {
+    display: flex;
+    gap: 1rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
+  }
+  
+  .cartItem img {
+    width: 100px;
+    object-fit: contain;
+  }
+  
+  .details {
+    flex: 1;
+  }
+  
+  .cartSummary {
+    margin-top: 2rem;
+    text-align: right;
+  }
+  
+  .btn, .clearBtn, .buyBtn {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: #6C1B9E;
+    color: white;
+    border-radius: 5px;
+  }
+
+.emptyCart {
+    padding: 2rem;
+    max-width: 800px;        
+    margin: 2rem auto;        
+    background-color: #fff;  
+    border-radius: 10px;     
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    justify-items: center; 
+}
+
+.modalContent {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.modalContent h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.modalContent form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.modalContent input {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.modalContent input:focus {
+  outline: none;
+  border-color: #6C1B9E;
+  box-shadow: 0 0 0 2px rgba(108, 27, 158, 0.2);
+}
+
+.formButtons {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.formButtons button {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.formButtons button[type="submit"] {
+  background-color: #6C1B9E;
+  color: white;
+}
+
+.formButtons button[type="button"] {
+  background-color: #717171;
+  color: white;
+}

@@ -1,0 +1,30 @@
+.counterContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .counterBtn {
+    padding: 6px 12px;
+    font-size: 20px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .counterInput {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .addToCart {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+  }
+  

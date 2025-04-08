@@ -15,7 +15,7 @@ import CartWidget from '../cartwidget/cartWidget';
 import { Link, NavLink } from "react-router-dom";
 
 const pages = ['COMPUTACIÓN', 'ACCESORIOS'];
-const settings = ['Perfil', 'Cuenta', 'Carrito', 'Cerrar sesión'];
+const settings = ['Perfil', 'Cuenta', 'Cerrar sesión'];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
